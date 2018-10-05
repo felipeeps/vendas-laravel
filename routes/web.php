@@ -8,4 +8,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Controller tipo RestFul
-Route::resource('product', 'ProdutoController');
+Route::resource('products', 'ProdutoController');

@@ -1,11 +1,12 @@
-<!-- @section('menus') -->
   <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Gerenciamento de Vendas</title>
+
+    <title>Listagem de Produtos</title>
 
     <!-- Fazer section com os links -->
         <!-- Bootstrap core CSS-->
@@ -13,6 +14,7 @@
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         
+
         <!-- Custom fonts for this template-->
         <link href="../public/css/all.min.css" rel="stylesheet" type="text/css">
 
@@ -27,7 +29,7 @@
     <!-- Fazer uma section do Menu -->
         <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-        <a class="navbar-brand mr-1" href="index.html">Gerenciamento de Vendas</a>
+        <a class="navbar-brand mr-1" href="index.html">Listagem de Produtos</a>
 
         <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
             <i class="fas fa-bars"></i>
@@ -106,9 +108,9 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <h6 class="dropdown-header">Seleciona a operação:</h6>
-            <a class="dropdown-item" href="{{route('products.create')}}">Novo Produto</a>
+            <a class="dropdown-item" href="#">Novo Produto</a>
             <a class="dropdown-item" href="#">Editar Produto</a>
-            <a class="dropdown-item" href="{{route('products.index')}}">Listar Produtos</a>
+            <a class="dropdown-item" href="{{ route('products.index') }}">Listar Produtos</a>
             <!--
               <div class="dropdown-divider"></div>
               <h6 class="dropdown-header">Other Pages:</h6>
@@ -129,6 +131,24 @@
             <span>Listas</span></a>
         </li>
       </ul>
+
+      <div class="container">
+        <h4>Listagem dos Produtos</h4>
+        <table class="table table-hover">
+            <tr>
+                <th scope="col">Nome:</th>
+                <th scope="col">Quantidade:</th>
+            </tr>
+
+            @foreach($products as $product)
+                <tr>
+                    <td>{{$product->name}}</td>
+                    <td>{{$product->amount}}</td>
+                </tr>
+            @endforeach    
+
+        </table>
+      </div>
 
       
         <!-- Sticky Footer -->
@@ -159,5 +179,3 @@
     <!-- Fim Section com os scripts -->
 
   </body>
-
-@show

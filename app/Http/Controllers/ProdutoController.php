@@ -3,18 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Products;
 
 class ProdutoController extends Controller{
-    public function index(){
-        //Mostrar todos os registros do BD
+    public function index(){ //Mostrar todos os registros do BD
+        $products = Products::all();
+
+        return view('products.index', compact('products')); //Compact para passar os dados do product para a view
     }
 
-    public function create(){
-        //Retorna a view com o Form de criação
+    public function create(){ //Retorna a view com o Form de criação
+        return view('products.create');
     }
 
-    public function store(Request $request) {
-        //Ação de criação do formulário
+    public function store(Request $request) { //Ação de criação do formulário
+        //Pega todos os dados e cria
+        Products::create($request->all());
+        
+        return redirect()->route('products.index');
     }
 
     public function show($id) {
