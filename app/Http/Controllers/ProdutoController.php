@@ -25,15 +25,29 @@ class ProdutoController extends Controller{
 
     public function show($id) {
         //Mostrar registros especificos 
+
+        $products = Products::findOrFail($id);
+
+        return view('products.show', compact('products'));
     }
 
     public function edit($id){
         //Formulário de edição
+        $products = Products::findOrFail($id);
+
+        return view('products.edit', compact('products'));
     }
 
     public function update(Request $request, $id) {
         //Ação de edição do formulário
-    }
+        
+        $products = Products::findOrFail($id);
+
+        $products->update($request->all());
+
+        return redirect()->route('products.index');
+
+    }       
 
     public function destroy($id){
         //Deletar registro

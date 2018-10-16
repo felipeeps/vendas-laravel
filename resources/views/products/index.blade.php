@@ -142,7 +142,7 @@
 
             @foreach($products as $product)
                 <tr>
-                    <td>{{$product->name}}</td>
+                    <td><a href="products/{{$product->id}}">{{$product->name}}</a></td>
                     <td>{{$product->amount}}</td>
                 </tr>
             @endforeach    
