@@ -1,7 +1,10 @@
-<div class="container">
-        <h2>Novo Produto</h2>
-        <form action="{{ route('products.update', $products->id) }}" method="post">
+@extends('layouts.master')
 
+@section('conteudo')
+    <h2>Novo Produto</h2>
+        <form method="post" action="{{ route('products.update', $products->id) }}" >
+            @method('PATCH')
+            @csrf
             <p class="form-group">
                 <label for="name">Nome:</label>
                 <input name="name" class="form-control" type="text" value={{ $products->name }}>
@@ -9,12 +12,12 @@
 
             <p class="form-group">
                 <label for="amount">Quantidade:</label>
-            <input name="amount" class="form-control" type="text" value={{ $products->quantity }}>
+            <input name="amount" class="form-control" type="text" value={{ $products->amount }}>
             </p>
             
             <p class="form-group">
                 <input class="btn btn-primary" type="submit" value="Alterar">
             </p>
         </form>
-    </div>
+@endsection
 

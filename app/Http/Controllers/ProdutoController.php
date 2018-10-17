@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Products;
 
 class ProdutoController extends Controller{
-    public function index(){ //Mostrar todos os registros do BD
+    public function index(){ 
+        //Mostrar todos os registros do BD
         $products = Products::all();
 
         return view('products.index', compact('products')); //Compact para passar os dados do product para a view

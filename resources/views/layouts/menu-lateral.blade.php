@@ -19,7 +19,6 @@
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                 <h6 class="dropdown-header">Seleciona a operação:</h6>
                 <a class="dropdown-item" href="{{route('products.create')}}">Novo Produto</a>
-                <a class="dropdown-item" href="#">Editar Produto</a>
                 <a class="dropdown-item" href="{{route('products.index')}}">Listar Produtos</a>
             </div>
         </li>

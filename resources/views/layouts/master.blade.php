@@ -14,13 +14,20 @@
         @include('layouts.menus')
     <!-- Fim Menu superior -->
 
-    <!-- Menu Lateral -->
-        @include('layouts.menu-lateral')
-    <!-- Fim Menu Lateral -->
+    <div id="wrapper">
+        <!-- Menu Lateral -->
+            @include('layouts.menu-lateral')
+        <!-- Fim Menu Lateral -->
 
-    <!-- Conteúdo do site -->
-    <!-- Fim Conteúdo do site -->
-
+        <!-- Conteúdo do site -->
+        <div id="content-wrapper">
+            <div class="container-fluid">
+                @yield('conteudo')
+            </div>
+        </div>    
+        <!-- Fim Conteúdo do site -->
+    </div>
+    
     <!-- Section com os scripts -->
         @include('scripts.scripts')
     <!-- Fim Section com os scripts -->
