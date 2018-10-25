@@ -8,7 +8,7 @@ use App\Products;
 class ProdutoController extends Controller{
     public function index(){ 
         //Mostrar todos os registros do BD
-        $products = Products::all();
+        $products = Products::paginate(8);
 
         return view('products.index', compact('products')); //Compact para passar os dados do product para a view
     }
