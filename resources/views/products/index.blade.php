@@ -15,4 +15,6 @@
             </tr>
          @endforeach    
     </table>
+
+    {!! $products->render() !!}
 @endsection

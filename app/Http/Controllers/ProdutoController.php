@@ -8,7 +8,8 @@ use App\Products;
 class ProdutoController extends Controller{
     public function index(){ 
         //Mostrar todos os registros do BD
-        $products = Products::paginate(8);
+        //SimplePaginate para paginação simples e Paginate para mostrar o número de todas as páginas
+        $products = Products::Paginate(8);
 
         return view('products.index', compact('products')); //Compact para passar os dados do product para a view
     }
