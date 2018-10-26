@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Products;
+use App\Http\Requests\ProdutoRequest;
 
 class ProdutoController extends Controller{
     public function index(){ 
@@ -18,7 +19,7 @@ class ProdutoController extends Controller{
         return view('products.create');
     }
 
-    public function store(Request $request) { //Ação de criação do formulário
+    public function store(ProdutoRequest $request) { //Ação de criação do formulário
         //Pega todos os dados e cria
         Products::create($request->all());
         
@@ -40,7 +41,7 @@ class ProdutoController extends Controller{
         return view('products.edit', compact('products'));
     }
 
-    public function update(Request $request, $id) {
+    public function update(ProdutoRequest $request, $id) {
         //Ação de edição do formulário
         
         $products = Products::findOrFail($id);

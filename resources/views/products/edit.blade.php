@@ -7,12 +7,12 @@
             @csrf
             <p class="form-group">
                 <label for="name">Nome:</label>
-                <input name="name" class="form-control" type="text" value={{ $products->name }}>
+                <input name="name" class="form-control" required="" type="text" value={{ $products->name }}>
             </p>
 
             <p class="form-group">
                 <label for="amount">Quantidade:</label>
-            <input name="amount" class="form-control" type="text" value={{ $products->amount }}>
+            <input name="amount" class="form-control" required="" type="number" value={{ $products->amount }}>
             </p>
             
             <p class="form-group">

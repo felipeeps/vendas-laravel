@@ -9,12 +9,12 @@
         
         <p class="form-group">
             <label for="name">Nome:</label>
-            <input name="name" class="form-control" type="text">
+            <input name="name" required="" class="form-control" type="text">
         </p>
 
         <p class="form-group">
             <label for="amount">Quantidade:</label>
-            <input name="amount" class="form-control" type="text">
+            <input name="amount" required="" class="form-control" type="number">
         </p>
             
         <p class="form-group">
